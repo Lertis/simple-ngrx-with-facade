@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Facade } from './shared/services/facade/facade.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngrx-with-facade';
+  constructor(private facade: Facade) {
+    this.facade.loadPosts();
+
+  }
 }
